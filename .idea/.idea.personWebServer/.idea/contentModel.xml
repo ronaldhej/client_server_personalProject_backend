@@ -12,7 +12,6 @@
           <e p="PersonService.cs" t="Include" />
           <e p="WeatherForecast.cs" t="Include" />
           <e p="WeatherForecastService.cs" t="Include" />
-          <e p="personWebServerContext.cs" t="Include" />
         </e>
         <e p="Pages" t="Include">
           <e p="Counter.razor" t="Include" />

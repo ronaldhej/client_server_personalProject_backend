@@ -1,9 +1,12 @@
 @page "/people"
 
+@using Microsoft.AspNetCore.Http
 @using personWebServer.Data
-@inject PeopleService PeopleService
+@inject PersonService PersonService
 
 <h1>List of People</h1>
+<p>@buttonStatus</p>
+<button class="btn btn-primary" @onclick="CreatePerson" >Click me</button>
 
 @if (people == null)
 {
@@ -39,7 +42,14 @@ else
 
         protected override async Task OnInitializedAsync()
         {
-            people = await PeopleService.GetPeopleAsync();
+            people = await PersonService.GetPeopleAsync();
+        }
+
+        private String buttonStatus = "Not clicked";
+        private void CreatePerson()
+        {
+            buttonStatus = "Clicked!";
+            PersonService.PostPerson();
         }
 
     }

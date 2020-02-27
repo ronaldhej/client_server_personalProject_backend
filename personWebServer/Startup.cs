@@ -31,9 +31,8 @@ namespace personWebServer
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
-            services.AddSingleton<PeopleService>();
-            services.AddEntityFrameworkNpgsql().AddDbContext<personWebServerContext>(opt =>
-                opt.UseNpgsql(Configuration.GetConnectionString("personWebServerConnection")));
+            services.AddSingleton<PersonService>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
