@@ -8,10 +8,11 @@
       <e p="personWebServer" t="IncludeRecursive">
         <e p="App.razor" t="Include" />
         <e p="Data" t="Include">
-          <e p="People.cs" t="Include" />
-          <e p="PeopleService.cs" t="Include" />
+          <e p="Person.cs" t="Include" />
+          <e p="PersonService.cs" t="Include" />
           <e p="WeatherForecast.cs" t="Include" />
           <e p="WeatherForecastService.cs" t="Include" />
+          <e p="personWebServerContext.cs" t="Include" />
         </e>
         <e p="Pages" t="Include">
           <e p="Counter.razor" t="Include" />

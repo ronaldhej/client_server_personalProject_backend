@@ -1,7 +1,7 @@
 using System;
 namespace personWebServer.Data
 {
-    public class People
+    public class Person
     {
         
         public String FirstName { get; set; }

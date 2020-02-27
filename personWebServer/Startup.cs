@@ -6,10 +6,12 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using personWebServer.Data;
+using Npgsql.EntityFrameworkCore;
 
 namespace personWebServer
 {
@@ -30,6 +32,8 @@ namespace personWebServer
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
             services.AddSingleton<PeopleService>();
+            services.AddEntityFrameworkNpgsql().AddDbContext<personWebServerContext>(opt =>
+                opt.UseNpgsql(Configuration.GetConnectionString("personWebServerConnection")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

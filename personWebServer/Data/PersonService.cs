@@ -16,10 +16,10 @@ namespace personWebServer.Data
             "Zhong", "Rasmussen", "Scott", "Pedersen", "Johnson"
         };
         
-        public Task<People[]> GetPeopleAsync()
+        public Task<Person[]> GetPeopleAsync()
         {
             var rng = new Random();
-            return Task.FromResult(Enumerable.Range(1, 5).Select(index => new People
+            return Task.FromResult(Enumerable.Range(1, 5).Select(index => new Person
             {
                 FirstName = FirstNames[rng.Next(FirstNames.Length)],
                 LastName = LastNames[rng.Next(LastNames.Length)],
